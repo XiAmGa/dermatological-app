@@ -1,0 +1,35 @@
+{% extends "interface_doctor.html" %}
+{% block ul %}
+<ul class="nav_list">
+    <li><a class="menu_opcion" href="{{ url_for('interface_doctor',doctor_id = doctor_id) }}">
+            <div>
+                <i class='bx bxs-home'></i>
+                <span>INICIO</span>
+            </div>
+        </a></li>
+    <li><a class="menu_opcion"
+            href="{{ url_for('show_patients',doctor_id=doctor_id, doctor_name = doctor_name) }}">
+            <div>
+                <i class='bx bx-list-ol'></i>
+                <span>MOSTRAR PACIENTES</span>
+            </div>
+        </a></li>
+    <li><a class="menu_opcion activado" href="{{ url_for('show_dates',doctor_id=doctor_id, doctor_name=doctor_name) }}">
+            <div>
+                <i class='bx bx-list-check'></i>
+                <span>MOSTRAR CITAS</span>
+            </div>
+        </a></li>
+    <li><a class="menu_opcion" href="{{ url_for('index') }}">
+            <div>
+                <i class='bx bxs-exit'></i>
+                <span>CERRAR SESIÓN</span>
+            </div>
+        </a></li>
+</ul>
+{% endblock %}
+{% block content %}
+<div class="overlay_3">
+
+</div>
+{% endblock %}

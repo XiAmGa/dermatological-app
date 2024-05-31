@@ -1,0 +1,50 @@
+{% extends "interface_patient.html" %}
+{% block ul %}
+<ul class="nav_list">
+  <li><a class="menu_opcion" href="{{ url_for('interface_patient',paciente_id = paciente_id) }}">
+      <div>
+        <i class='bx bxs-home'></i>
+        <span>INICIO</span>
+      </div>
+    </a></li>
+  <li><a class="menu_opcion activado"
+      href="{{ url_for('predict_section', paciente_id = paciente_id, paciente_name=paciente_name) }}">
+      <div>
+        <i class='bx bxs-search'></i>
+        <span>PREDECIR ENFERMEDAD</span>
+      </div>
+    </a></li>
+  <li><a class="menu_opcion" href="{{ url_for('index') }}">
+      <div>
+        <i class='bx bxs-exit'></i>
+        <span>CERRAR SESIÓN</span>
+      </div>
+    </a></li>
+</ul>
+{% endblock %}
+{% block content %}
+<div class="overlay_3">
+  <h2>El resultado del análisis se refiere a: <u>{{mensaje}}</u></h2>
+  <div class="div_result">
+    <div class="div_flex">
+      <img height="200px" src="{{ url_for('static', filename='images/vitiligio.jpg') }}" alt="Tu Imagen" />
+      <div class="div_desc">
+        El vitiligo es una enfermedad cutánea que se caracteriza por la
+        pérdida gradual de pigmento en la piel, lo que resulta en la aparición
+        de manchas blancas o áreas despigmentadas. Esta condición ocurre
+        cuando las células que producen el pigmento de la piel, llamado
+        melanina, son destruidas o dejan de funcionar correctamente. El
+        vitiligo puede afectar cualquier área del cuerpo, incluyendo la cara,
+        manos, pies, genitales y mucosas.
+      </div>
+    </div>
+  </div>
+  <h2>Imagen Cargada</h2>
+  {% if image %}
+  <div>
+    <img height="200px" class="img_loaded" src="data:image/png;base64,{{ image }}" alt="Uploaded Image" />
+  </div>
+  {% endif %}
+  <p>Diágnostigo guardado en el registro del paciente</p>
+</div>
+{% endblock %}

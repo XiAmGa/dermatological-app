@@ -1,0 +1,39 @@
+{% extends "index.html" %} {% block content %}
+<div class="div_form">
+    <h1>Registrarse</h1>
+    <h2>Dermatological App</h2>
+    <form class="sign_frm" method="post" action="/add_patient">
+        <div class="div_input">
+            <input type="text" id="nombre" name="nombre" class="frm_input" required />
+            <label for="nombre" class="lbl_input"><span class="txt_name">Nombre</span></label>
+        </div>
+        <div class="div_input">
+            <input type="text" id="apellido" name="apellido" class="frm_input" required />
+            <label for="apellido" class="lbl_input"><span class="txt_name">Apellido</span></label>
+        </div>
+        <div class="div_input">
+            <input type="text" id="documento" name="documento" class="frm_input" required />
+            <label for="documento" class="lbl_input"><span class="txt_name">DNI</span></label>
+        </div>
+        <div class="div_input">
+            <input type="text" id="telefono" name="telefono" class="frm_input" required />
+            <label for="telefono" class="lbl_input"><span class="txt_name">Teléfono</span></label>
+        </div>
+        <div class="div_input">
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" class="frm_input" required />
+            <label for="fecha_nacimiento" class="lbl_input"><span class="txt_date">Fecha de nacimiento</span></label>
+        </div>
+        <div class="div_input">
+            <input type="email" id="correo" name="correo" class="frm_input" required />
+            <label for="correo" class="lbl_input"><span class="txt_name">Correo eléctronico</span></label>
+        </div>
+        <div class="div_input">
+            <input type="password" id="contrasena" name="contrasena" class="frm_input" required />
+            <label for="contrasena" class="lbl_input"><span class="txt_name">Contraseña</span></label>
+        </div>
+        <div class="div_btn">
+            <button class="btn_send" type="submit">GUARDAR</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

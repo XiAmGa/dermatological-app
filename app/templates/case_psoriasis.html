@@ -1,0 +1,53 @@
+{% extends "interface_patient.html" %}
+{% block ul %}
+<ul class="nav_list">
+  <li><a class="menu_opcion" href="{{ url_for('interface_patient',paciente_id = paciente_id) }}">
+      <div>
+        <i class='bx bxs-home'></i>
+        <span>INICIO</span>
+      </div>
+    </a></li>
+    <li><a class="menu_opcion activado" href="{{ url_for('predict_section', paciente_id = paciente_id, paciente_name=paciente_name) }}">
+      <div>
+        <i class='bx bxs-search'></i>
+        <span>PREDECIR ENFERMEDAD</span>
+      </div>
+    </a></li>
+  <li><a class="menu_opcion" href="{{ url_for('index') }}">
+      <div>
+        <i class='bx bxs-exit'></i>
+        <span>CERRAR SESIÓN</span>
+      </div>
+    </a></li>
+</ul>
+{% endblock %}
+{% block content %}
+<div class="overlay_3">  
+  <h2>El resultado del análisis se refiere a: <u>{{mensaje}}</u></h2>
+  <div class="div_result">
+    <div class="div_flex">
+      <img height="200px" src="{{ url_for('static', filename='images/psoriasis.jpg') }}" alt="Tu Imagen" />
+      <div class="div_desc">
+        "La psoriasis es una enfermedad crónica de la piel que se caracteriza
+        por la aparición de placas escamosas y enrojecidas en la superficie
+        cutánea. Estas placas suelen ser gruesas, secas y con bordes bien
+        definidos. La psoriasis es causada por un sistema inmunológico
+        hiperactivo que acelera el ciclo de vida de las células cutáneas, lo
+        que resulta en una acumulación rápida de células en la superficie de
+        la piel."
+      </div>
+    </div>
+  </div>
+  <h2>Imagen Cargada</h2>
+    {% if image %}
+    <img height="200px" class="img_loaded" src="data:image/png;base64,{{ image }}" alt="Uploaded Image" />
+    {% endif %}
+  <!-- <div class="div__nota">
+    NOTA: El resultado es un diagnóstico presuntivo, es recomendable asistir
+    con su médico especialista. Es importante consultar a un profesional de la
+    salud para obtener un diagnóstico adecuado y un plan de tratamiento
+    apropiado.
+  </div> -->
+  <p>Diágnostigo guardado en el registro del paciente</p>
+</div>
+{% endblock %}

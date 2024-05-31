@@ -1,0 +1,32 @@
+{% extends "interface_patient.html" %}
+{% block ul %}
+<ul class="nav_list">
+    <li><a class="menu_opcion" href="{{ url_for('interface_patient',paciente_id = paciente_id) }}">
+            <div>
+                <i class='bx bxs-home'></i>
+                <span>INICIO</span>
+            </div>
+        </a></li>
+    <li><a class="menu_opcion activado"
+            href="{{ url_for('predict_section', paciente_id = paciente_id, paciente_name=paciente_name) }}">
+            <div>
+                <i class='bx bxs-search'></i>
+                <span>PREDECIR ENFERMEDAD</span>
+            </div>
+        </a></li>
+    <li><a class="menu_opcion" href="{{ url_for('index') }}">
+            <div>
+                <i class='bx bxs-exit'></i>
+                <span>CERRAR SESIÓN</span>
+            </div>
+        </a></li>
+</ul>
+{% endblock %}
+{% block content %}
+<div class="overlay_3">
+    <div class="bad_msg">
+        <i class='bx bxs-error bx-lg'></i><br>
+        La imagen no está relacionada con ningún padecimiento de la piel. <br> Por favor, suba otra imagen.
+    </div>
+</div>
+{% endblock %}

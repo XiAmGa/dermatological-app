@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dermatological APP</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/favicon.svg') }}">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+    <link rel="stylesheet" href="{{url_for('static',filename ='css/doctor_style.css')}}" />
+</head>
+
+<body>
+    <div class="div_back">
+        <div class="title">
+            <i class='bx bx-analyse bx-lg'></i>
+            Diagnóstico primario de<br />enfermedades dermatológicas
+        </div>
+        <div class="section_1">
+            <div class="menu">
+                <div class="div_user">
+                    <h1>Bienvenid@</h1>
+                    <h2>Dr. {{doctor_name}}</h2>
+                    <i class='bx bxs-user-circle'></i>
+                </div>
+                {% block ul %}
+                <ul class="nav_list">
+                    <li><a class="menu_opcion activado" href="{{ url_for('interface_doctor',doctor_id = doctor_id) }}">
+                            <div>
+                                <i class='bx bxs-home'></i>
+                                <span>INICIO</span>
+                            </div>
+                        </a></li>
+                    <li><a class="menu_opcion"
+                            href="{{ url_for('show_patients',doctor_id=doctor_id, doctor_name = doctor_name) }}">
+                            <div>
+                                <i class='bx bx-list-ol'></i>
+                                <span>MOSTRAR PACIENTES</span>
+                            </div>
+                        </a></li>
+                    <li><a class="menu_opcion"
+                            href="{{ url_for('show_dates',doctor_id=doctor_id, doctor_name=doctor_name) }}">
+                            <div>
+                                <i class='bx bx-list-check'></i>
+                                <span>MOSTRAR CITAS</span>
+                            </div>
+                        </a></li>
+                    <li><a class="menu_opcion" href="{{ url_for('index') }}">
+                            <div>
+                                <i class='bx bxs-exit'></i>
+                                <span>CERRAR SESIÓN</span>
+                            </div>
+                        </a></li>
+                </ul>
+                {% endblock %}
+            </div>
+            <div class="section_2">
+                {% block content %}
+                <div class="overlay_2">
+                    <h1>Dermatological App</h1>
+                    <br>
+                    <p>
+                        Descubre Dermatological App, tu nueva plataforma web avanzada diseñada para transformar el
+                        cuidado de tu piel. Utilizando la potencia del machine learning, nuestra aplicación es capaz de
+                        reconocer imágenes de diversas enfermedades de la piel como psoriasis, rosácea, sarpullido y
+                        vitíligo con una precisión impresionante. Simplemente sube una foto de la zona afectada, y
+                        nuestro sistema de inteligencia artificial analizará la imagen para ofrecerte un diagnóstico
+                        preliminar en cuestión de segundos.
+                    </p><br>
+                    <p>
+                        Además, Dermatological App no solo se queda en el diagnóstico. Entendemos la importancia de una
+                        atención médica profesional y personalizada, por lo que también te ofrecemos la opción de
+                        programar citas con dermatólogos especializados directamente desde la plataforma. Ya sea para
+                        una consulta en línea o en persona, nuestro objetivo es facilitarte el acceso a expertos que
+                        pueden proporcionarte el tratamiento y los consejos adecuados para tus necesidades.
+                    </p>
+                </div>
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>

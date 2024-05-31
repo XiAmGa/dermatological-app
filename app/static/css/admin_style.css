@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.div_back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F2F2F2;
+    display: flex;
+    flex-direction: column;
+}
+
+.div_back .title {
+    font-family: "Poppins", sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    background-color: #1c2e30;
+    border-bottom: 5px solid #46595b;
+    color: #EEE;
+    display: flex;
+    align-items: center;
+    padding: 20px 0 10px 35px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 12px 0px;
+}
+
+.title i {
+    padding-right: 15px;
+}
+
+.section_1 {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: 1fr;
+    grid-column-gap: 20px;
+    height: 100%;
+    padding: 30px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #314446;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 12px 0px;
+}
+
+
+.menu .div_user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 800;
+
+}
+
+.div_user h1 {
+    font-size: 30px;
+}
+
+.div_user h2 {
+    font-size: 25px;
+}
+
+.bxs-user-circle {
+    color: #708486;
+    font-size: 120px;
+    padding-top: 10px;
+    padding-bottom: 35px;
+}
+
+.nav_list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+.menu_opcion {
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: #fff;
+    background-color: #46595b;
+    border-top: 2px solid #314446;
+    border-bottom: 2px solid #314446;
+    transition: all 0.6s ease;
+}
+
+.menu_opcion:hover {
+    background-color: #1c2e30;
+}
+
+.activado {
+    background-color: #1c2e30;
+}
+
+
+.menu_opcion div {
+    display: flex;
+    align-items: center;
+}
+
+.menu_opcion span {
+    display: block;
+    border-left: 2px solid #eee;
+    padding: 10px;
+}
+
+.menu_opcion i {
+    padding: 10px;
+}
+
+
+.section_2 {
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/bg_2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 8px 12px 0px;
+}
+
+.overlay_2 {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: justify;
+    padding: 33px 50px;
+    font-size: 28px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: #333;
+}
+
+.overlay_3 {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 0px 0px 0px;
+    font-size: 24px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: #333;
+}
+
+/* INTERFACES */
+.patients_table {
+    height: 600px;
+    overflow-y: scroll;
+}
+
+.patients_table th {
+    background-color: #314446;
+    color: #EEE;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.patients_table td {
+    padding: 5px;
+    color: #333;
+    font-size: 18px;
+    padding: 10px;
+}
+
+.patients_table table {
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.patients_table tr {
+    background-color: #ddd;
+}
+
+.patients_table tr:nth-child(even) {
+    background-color: #bbb;
+}
+
+/* Add patient*/
+.overlay_3 form {
+    color: #eee;
+    background-color: #1c2e30;
+    border-radius: 10px;
+    text-align: center;
+    padding: 33px 22px;
+}
+
+.overlay_3 form div {
+    font-size: 24px;
+    color: #eee;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.overlay_3 input,
+.overlay_3 label {
+    padding: 10px;
+}
+
+.overlay_3 input {
+    width: 400px;
+    border: 2px solid white;
+    background-color: #1c2e30;
+    border-radius: 10px;
+    color: white;
+    font-size: 24px;
+}
+
+.div_btn_f {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.btn_send {
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid white;
+    background-color: #46595b;
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 15px 30px;
+    transition: all 0.6s ease;
+}
+
+.btn_send:hover {
+    background-color: #314446;
+}

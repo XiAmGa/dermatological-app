@@ -1,0 +1,44 @@
+{% extends "interface_patient.html" %}
+{% block ul %}
+<ul class="nav_list">
+  <li><a class="menu_opcion" href="{{ url_for('interface_patient',paciente_id = paciente_id) }}">
+      <div>
+        <i class='bx bxs-home'></i>
+        <span>INICIO</span>
+      </div>
+    </a></li>
+    <li><a class="menu_opcion activado" href="{{ url_for('predict_section', paciente_id = paciente_id, paciente_name=paciente_name) }}">
+      <div>
+        <i class='bx bxs-search'></i>
+        <span>PREDECIR ENFERMEDAD</span>
+      </div>
+    </a></li>
+  <li><a class="menu_opcion" href="{{ url_for('index') }}">
+      <div>
+        <i class='bx bxs-exit'></i>
+        <span>CERRAR SESIÓN</span>
+      </div>
+    </a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<div class="overlay_3">
+  <h1>Cargar una Imagen</h1>
+  <p>Selecciona una imagen en formato PNG, JPG o JPEG, luego haz clic en el botón "PREDECIR".</p>
+  <form method="POST" action="/mostrar_imagen/{{paciente_id}}/{{paciente_name}}" enctype="multipart/form-data">
+    <div class="div_input_img">
+      <input id="imageInput" class="input_img" type="file" name="file" accept=".png, .jpg, .jpeg" required />
+    </div>
+    <div style="display: flex ; justify-content: center;">
+      <div id="previewContainer">
+        <img width="492px" height="392px" id="imagePreview" src="#" alt="Vista previa de la imagen"
+          style="display:none;">
+      </div>
+    </div>
+    <div class="div_btn_2">
+      <button class="btn_send" type="submit">PREDECIR</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

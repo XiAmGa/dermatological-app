@@ -1,0 +1,68 @@
+{% extends "interface_admin.html" %}
+{% block ul %}
+<ul class="nav_list">
+  <li><a class="menu_opcion" href="{{ url_for('interface_admin') }}">
+      <div>
+        <i class='bx bxs-home'></i>
+        <span>INICIO</span>
+      </div>
+    </a></li>
+  <li><a class="menu_opcion activado" href="{{ url_for('show_patients_admin') }}">
+      <div>
+        <i class='bx bx-list-ol'></i>
+        <span>MOSTRAR PACIENTES</span>
+      </div>
+    </a></li>
+  <li><a class="menu_opcion" href="{{ url_for('show_doctors_admin') }}">
+      <div>
+        <i class='bx bx-list-ol'></i>
+        <span>MOSTRAR DOCTORES</span>
+      </div>
+    </a></li>
+  <li><a class="menu_opcion" href="{{ url_for('add_doctor')}}">
+      <div>
+        <i class='bx bxs-user-plus'></i>
+        <span>AÑADIR DOCTOR</span>
+      </div>
+    </a></li>
+  <li><a class="menu_opcion" href="{{ url_for('index') }}">
+      <div>
+        <i class='bx bxs-exit'></i>
+        <span>CERRAR SESIÓN</span>
+      </div>
+    </a></li>
+</ul>
+{% endblock %}
+{% block content %}
+<div class="overlay_3">
+  <h1>Pacientes Registrados</h1>
+  <div class="patients_table">
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>DNI</th>
+        <th>Celular</th>
+        <th>Fecha</th>
+        <th>Correo</th>
+        <!-- <th>Contraseña</th> -->
+        <th>Diagnóstico</th>
+      </tr>
+      {% for paciente in pacientes %}
+      <tr>
+        <td>{{ paciente[0] }}</td>
+        <td>{{ paciente[1] }}</td>
+        <td>{{ paciente[2] }}</td>
+        <td>{{ paciente[3] }}</td>
+        <td>{{ paciente[4] }}</td>
+        <td>{{ paciente[5] }}</td>
+        <td>{{ paciente[6] }}</td>
+        <!-- <td>{{ paciente[7] }}</td> -->
+        <td>{{ paciente[8] }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dermatological APP</title>
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='images/favicon.svg') }}">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+    <link rel="stylesheet" href="{{url_for('static',filename ='css/new_style.css')}}" />
+</head>
+
+<body>
+    <div class="background_1"></div>
+    <div class="overlay">
+        {% block content %}
+        <div class="div_form">
+            <h1>Bienvenido</h1>
+            <h2>Dermatological App</h2>
+            <form method="POST" action="/">
+                <div class="div_input">
+                    <input type="text" id="documento" name="documento" class="frm_input" required />
+                    <label class="lbl_input"><span class="txt_name">DNI</span></label>
+                </div>
+                <div class="div_input">
+                    <input type="password" id="contrasena" name="contrasena" class="frm_input" required />
+                    <label class="lbl_input"><span class="txt_name">Contraseña</span></label>
+                    <i class='bx bxs-show bx-sm' id="icon_eye"></i>
+                </div>
+                <div class="div_btn">
+                    <button class="btn_send" type="submit">INGRESAR</button>
+                </div>
+            </form>
+            <h3>¿No tienes una cuenta? <span>
+                    <a href="{{ url_for('add_patient') }}">Registrarse</a>
+                </span></h3>
+        </div>
+        {% endblock %}
+    </div>
+    <script src="{{ url_for('static', filename='js/code_1.js') }}"></script>
+</body>
+
+</html>

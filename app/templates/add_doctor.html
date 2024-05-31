@@ -1,0 +1,67 @@
+{% extends "interface_admin.html" %}
+{% block ul %}
+<ul class="nav_list">
+  <li><a class="menu_opcion" href="{{ url_for('interface_admin') }}">
+      <div>
+        <i class='bx bxs-home'></i>
+        <span>INICIO</span>
+      </div>
+    </a></li>
+  <li><a class="menu_opcion" href="{{ url_for('show_patients_admin') }}">
+      <div>
+        <i class='bx bx-list-ol'></i>
+        <span>MOSTRAR PACIENTES</span>
+      </div>
+    </a></li>
+  <li><a class="menu_opcion" href="{{ url_for('show_doctors_admin') }}">
+      <div>
+        <i class='bx bx-list-ol'></i>
+        <span>MOSTRAR DOCTORES</span>
+      </div>
+    </a></li>
+  <li><a class="menu_opcion activado" href="{{ url_for('add_doctor')}}">
+      <div>
+        <i class='bx bxs-user-plus'></i>
+        <span>AÑADIR DOCTOR</span>
+      </div>
+    </a></li>
+  <li><a class="menu_opcion" href="{{ url_for('index') }}">
+      <div>
+        <i class='bx bxs-exit'></i>
+        <span>CERRAR SESIÓN</span>
+      </div>
+    </a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<div class="overlay_3">
+  <form method="post" action="/add_doctor">
+    <h1>Registro de Doctores</h1>
+    <h1>Datos Personales</h1>
+    <div>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required />
+    </div>
+    <div>
+      <label for="apellido">Apellido:</label>
+      <input type="text" id="apellido" name="apellido" required />
+    </div>
+    <div>
+      <label for="descripción">Descripcion:</label>
+      <input type="text" id="descripcion" name="descripcion" required />
+    </div>
+    <div>
+      <label for="documento">DNI:</label>
+      <input type="text" id="documento" name="documento" required />
+    </div>
+    <div>
+      <label for="contrasena">Contraseña:</label>
+      <input type="password" id="contrasena" name="contrasena" required />
+    </div>
+    <div class="div_btn_f">
+      <button class="btn_send" type="submit">GUARDAR</button>
+    </div>
+  </form>
+</div>
+{% endblock %}
